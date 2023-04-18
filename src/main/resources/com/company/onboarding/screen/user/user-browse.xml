@@ -5,7 +5,9 @@
     <data readOnly="true">
         <collection id="usersDc"
                     class="com.company.onboarding.entity.User">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="departament" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="usersDl">
                 <query>
                     <![CDATA[select e from User e order by e.username]]>
@@ -55,10 +57,15 @@
                 <column id="email"/>
                 <column id="timeZoneId"/>
                 <column id="active"/>
+                <column id="onboardingStatus"/>
+                <column id="departament"/>
+                <column id="joiningDate"/>
+                <column id="picture"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
+                <button id="generateButton" caption="generate"/>
                 <button id="createBtn" action="usersTable.create"/>
                 <button id="editBtn" action="usersTable.edit"/>
                 <button id="removeBtn" action="usersTable.remove"/>
