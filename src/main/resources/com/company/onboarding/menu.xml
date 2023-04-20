@@ -7,6 +7,8 @@
         <item screen="Step.browse" caption="msg://com.company.onboarding.screen.step/stepBrowse.menu"/>
         <item screen="Departament.browse"
               caption="msg://com.company.onboarding.screen.departament/departamentBrowse.menu"/>
+        <item screen="MyOnboardingScreen"
+              caption="msg://com.company.onboarding.screen.myonboarding/myOnboardingScreen.caption"/>
     </menu>
 
 </menu-config>

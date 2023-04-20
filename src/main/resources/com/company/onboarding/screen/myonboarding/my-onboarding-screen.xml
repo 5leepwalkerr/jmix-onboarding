@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://myOnboardingScreen.caption">
+    <data>
+        <collection id="userStepDc"
+                    class="com.company.onboarding.entity.UserStep">
+            <fetchPlan extends="_base">
+                <property name="step" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="userStepsD1">
+                <query>
+                    <![CDATA[select e from UserStep e
+                       where e.user = :user
+                       order by e.sortValue asc ]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout expand="space">
+        <vbox spacing="true">
+            <label id="totalStepsLabel"/>
+            <label id="completedStepsLabel"/>
+            <label id="overdueStepsLabel"/>
+        </vbox>
+        <table id="userStepsTable" height="400px" width="100%" dataContainer="userStepDc">
+            <columns>
+                <column id="completed" caption=""/>
+                <column id="step.name"/>
+                <column id="dueDate"/>
+                <column id="completedDate"/>
+            </columns>
+        </table>
+        <hbox spacing="true" height="AUTO">
+            <button id="saveButton" caption="Save" primary="true"/>
+            <button id="discardButton" caption="Discard"/>
+        </hbox>
+        <label id="space"/>
+    </layout>
+
+</window>

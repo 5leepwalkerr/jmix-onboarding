@@ -51,6 +51,7 @@
                 <action id="resetRememberMeToken" type="resetRememberMeToken"/>
             </actions>
             <columns>
+                <column id="picture"/>
                 <column id="username"/>
                 <column id="firstName"/>
                 <column id="lastName"/>
@@ -60,7 +61,6 @@
                 <column id="onboardingStatus"/>
                 <column id="departament"/>
                 <column id="joiningDate"/>
-                <column id="picture"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
