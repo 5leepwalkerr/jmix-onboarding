@@ -16,3 +16,6 @@ out/
 
 ### VS Code ###
 .vscode/
+.gradle
+.jmix
+build
